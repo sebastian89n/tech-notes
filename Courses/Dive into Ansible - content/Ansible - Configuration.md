@@ -1,4 +1,4 @@
-#### Ansible configuration files (in priority order)
+#### Ansible configuration files (in order of priority)
 1. `ANSIBLE_CONFIG` (Environment Variable, with a filename target)
 2. `./ansible.cfg` (an ansible.cfg file, in the current directory) -> **recommended**
 3. `~/.ansible.cfg` (a hidden file, called .ansible.cfg, in the users home dir) 
