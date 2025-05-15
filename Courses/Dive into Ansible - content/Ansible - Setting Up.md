@@ -34,4 +34,3 @@ ansible@ubuntu-c:~$ for user in ansible root
 
 -i specifies invetories
 -m specifies the module to execute
-
