@@ -2,3 +2,5 @@
 2. [[Ansible - Configuration|Configuration]]
 3. [[Ansible - Inventories|Inventories]]
 4. [[Ansible - Modules|Modules]]
+5. [[Ansible - YAML|YAML]]
+6. [[Ansible - YAML|Playbooks]]
