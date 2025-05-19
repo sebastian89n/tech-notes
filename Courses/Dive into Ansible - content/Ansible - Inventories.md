@@ -97,6 +97,7 @@ update_sshd_ports.sh (END)
 ```
 
 Using ranges for servers and defining local ubuntu-c host:
+**Note: it has `ansible_connection=local` because it applies on the local machine**
 ```ini
 [control]
 ubuntu-c ansible_connection=local
