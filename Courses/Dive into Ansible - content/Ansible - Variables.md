@@ -3,7 +3,7 @@
 **1. Key-value pair**
 ```yaml
 ---
-  # Hosts: where our play will run and options it will run with
+-
   hosts: centos1
   gather_facts: False
  
@@ -22,6 +22,7 @@
 **2. Dictionary**
 ```yaml
 ---
+-
   # Hosts: where our play will run and options it will run with
   hosts: centos1
   gather_facts: False
@@ -50,6 +51,7 @@
 **3. Inline dictionary**
 ```yaml
 ---
+-
   # Hosts: where our play will run and options it will run with
   hosts: centos1
   gather_facts: False
@@ -79,6 +81,7 @@
 **4. Normal list**
 ```yaml
 ---
+-
   # Hosts: where our play will run and options it will run with
   hosts: centos1
   gather_facts: False
@@ -110,6 +113,7 @@
 **5. Inline list**
 ```yaml
 ---
+-
   # Hosts: where our play will run and options it will run with
   hosts: centos1
   gather_facts: False
@@ -139,6 +143,7 @@
 **6. External var files using `vars_files`**
 ```yaml
 ---
+-
   hosts: centos1
   gather_facts: False
  
@@ -204,6 +209,7 @@
 External file:
 ```yaml
 ---
+-
 external_example_key: example value
 
 external_dict:
@@ -226,6 +232,7 @@ external_inline_named_list:
 
 **7 & 8. Var prompts - prompts users for the variable**
 ```yaml
+-
   # Hosts: where our play will run and options it will run with
   hosts: centos1
   gather_facts: False
@@ -250,6 +257,7 @@ external_inline_named_list:
 **9 & 10. Using `hostvars` to access host specific data** (requires field to be present in `hostvars`. `Groupvars`(variables assigned on a group) can be also accessed via `hostvars`)
 ```yaml
 ---
+-
   # Hosts: where our play will run and options it will run with
   hosts: centos1
   gather_facts: True
@@ -273,6 +281,7 @@ external_inline_named_list:
 **11.  Default value using jinja2 filter**
 ```yaml
 ---
+-
   # Hosts: where our play will run and options it will run with
   hosts: centos
   gather_facts: True
