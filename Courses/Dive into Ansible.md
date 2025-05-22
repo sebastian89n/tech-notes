@@ -7,3 +7,4 @@
 7. [[Ansible - Variables|Variables]]
 8. [[Ansible - Facts|Facts]]
 9. [[Ansible - Jinja2|Jinja2]]
+10. [[Ansible - Creating and Executing Playbooks|Creating and Executing Playbooks]]
