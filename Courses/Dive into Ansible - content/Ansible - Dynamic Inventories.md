@@ -298,3 +298,6 @@ To check:
 `./inventory.py --list`
 
 This enhancement was added in 1.3+ and should be used because it dramatically increases speed of the execution.
+
+If ever needs to be used, check AWS Inventories for reference:
+https://docs.ansible.com/ansible/latest/collections/amazon/aws/docsite/aws_ec2_guide.html
