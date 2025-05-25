@@ -10,3 +10,5 @@
 10. [[Ansible - Creating and Executing Playbooks|Creating and Executing Playbooks]]
 11. [[Ansible - Playbook modules|Playbook modules]]
 12. [[Ansible - Dynamic Inventories|Dynamic Inventories]]
+13. [[Ansible - Register and When|Register and When]]
+14. 
