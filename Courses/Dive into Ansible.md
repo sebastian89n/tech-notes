@@ -12,3 +12,4 @@
 12. [[Ansible - Dynamic Inventories|Dynamic Inventories]]
 13. [[Ansible - Register and When|Register and When]]
 14. [[Ansible - Looping|Looping]]
+15. [[Ansible - Asynchronous, Serial, Parallel|Asnychronous, Serial, Parallel]]
