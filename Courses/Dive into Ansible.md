@@ -13,3 +13,5 @@
 13. [[Ansible - Register and When|Register and When]]
 14. [[Ansible - Looping|Looping]]
 15. [[Ansible - Asynchronous, Serial, Parallel|Asnychronous, Serial, Parallel]]
+16. [[Ansible - Task Delegation|Task Delegation]]
+17. 
