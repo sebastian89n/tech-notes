@@ -1,3 +1,5 @@
+>Dynamic inventories automatically generate the list of managed hosts and groups by querying external sources like cloud providers or CMDBs. They enable flexible, up-to-date host management without manually maintaining static inventory files.
+
 - Needs to be an executable file. Can be written in any language providing that it can be executed from the command line
 - Accepts the command line options of --list and --host hostname
 - Returns a JSON encoded dictionary of inventory content when used with --list

@@ -6,12 +6,12 @@
 
 (4)
 
-```
+```bash
 root@ubuntu-c:~# mkdir /etc/ansible
 root@ubuntu-c:~# touch /etc/ansible/ansible.cfg
 ```
 
-```
+```bash
 root@ubuntu-c:~# ansible --version
 ansible [core 2.17.4]
   config file = /etc/ansible/ansible.cfg
@@ -27,7 +27,7 @@ ansible [core 2.17.4]
 
 (3) Switching to use home directory .ansible.cfg:
 
-```
+```bash
 ansible@ubuntu-c:~$ cd ~
 ansible@ubuntu-c:~$ touch .ansible.cfg
 ansible@ubuntu-c:~$ ansible --version
@@ -43,7 +43,7 @@ ansible [core 2.17.4]
 ```
 
 (2)
-```
+```bash
 ansible@ubuntu-c:~$ mkdir testdir
 ansible@ubuntu-c:~$ cd testdir/
 ansible@ubuntu-c:~/testdir$ touch ansible.cfg
@@ -60,7 +60,7 @@ ansible [core 2.17.4]
 ```
 
 (1)
-```
+```bash
 ansible@ubuntu-c:~/testdir$ touch this_is_my_example_ansible.cfg
 ansible@ubuntu-c:~/testdir$ export ANSIBLE_CONFIG=/home/ansible/testdir/this_is_my_example_ansible.cfg 
 ansible@ubuntu-c:~/testdir$ ansible --version

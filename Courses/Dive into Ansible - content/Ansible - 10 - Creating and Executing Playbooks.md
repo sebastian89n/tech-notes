@@ -8,13 +8,8 @@ ansible_managed = Managed by Ansible - file:{file} - host:{host} - uid:{uid}
 
 **Using dnf/apt/yum modules:**
 ```yaml
---
-# YAML documents begin with the document separator ---
-
-# The minus in YAML this indicates a list item.  The playbook contains a list
-# of plays, with each play being a dictionary
--
-  hosts: linux
+---
+- hosts: linux
   vars:
     update_cache: yes
     state: latest
@@ -37,8 +32,6 @@ ansible_managed = Managed by Ansible - file:{file} - host:{host} - uid:{uid}
         state: latest
         update_cache: yes
       when: ansible_distribution == 'Ubuntu'
-
-  # Handlers: the list of handlers that are executed as a notify key from a task
 ...
 ```
 
@@ -54,12 +47,7 @@ ansible_managed = Managed by Ansible - file:{file} - host:{host} - uid:{uid}
 
 ```yaml
 ---
-# YAML documents begin with the document separator ---
-
-# The minus in YAML this indicates a list item.  The playbook contains a list
-# of plays, with each play being a dictionary
--
-  hosts: linux
+- hosts: linux
   vars_files:
     - vars/logos.yaml
   tasks:
@@ -113,8 +101,5 @@ ansible_managed = Managed by Ansible - file:{file} - host:{host} - uid:{uid}
       uri:
         url: http://{{ ansible_default_ipv4.address }}
         status_code: 200
-
-
-  # Handlers: the list of handlers that are executed as a notify key from a task
 ...
 ```

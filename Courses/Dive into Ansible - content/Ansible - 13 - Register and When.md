@@ -1,3 +1,5 @@
+>`register` is used to capture the output or result of a task and store it in a variable for later use. `when` is a conditional statement that controls whether a task runs, based on variable values or expressions — often used with registered results to create conditional logic in playbooks.
+
 `ansible all -a 'hostname -s' -o`
 
 Now using playbook, we register output of hostname command:

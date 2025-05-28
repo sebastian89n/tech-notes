@@ -1,8 +1,9 @@
+>Jinja2 templates in Ansible allow dynamic content generation using variables, filters, and control structures. They're commonly used to create configuration files by rendering `.j2` templates into final files with context-specific data.
+
 **IF example**
-```
+```yaml
 ---
--
-  tasks:
+- tasks:
     - name: Ansible Jinja2 if elif
       debug:
         msg: >
@@ -24,8 +25,7 @@
 **is defined example:**
 ```yaml
 ---
--
-  hosts: all
+- hosts: all
   tasks:
     - name: Ansible Jinja2 if variable is defined ( where variable is not defined )
       debug:
@@ -44,8 +44,7 @@
 **set variable example:**
 ```yaml
 ---
--
-  hosts: all
+- hosts: all
   tasks:
     - name: Ansible Jinja2 if variable is defined ( where variable is defined )
       debug:
@@ -66,8 +65,7 @@
 
 ```yaml
 ---
--
-  hosts: all
+- hosts: all
   tasks:
     - name: Ansible Jinja2 for statement
       debug:
@@ -83,8 +81,7 @@
 **for in range example(end eclusive):**
 ```yaml
 ---
--
-  hosts: all
+- hosts: all
   tasks:
     - name: Ansible Jinja2 for range
       debug:
@@ -109,8 +106,7 @@ jinja2_extensions = jinja2.ext.loopcontrols
 
 ```yaml
 ---
--
-  hosts: all
+- hosts: all
   tasks:
     - name: Ansible Jinja2 for range, reversed (simulate while greater 5)
       debug:
@@ -130,8 +126,7 @@ jinja2_extensions = jinja2.ext.loopcontrols
 
 ```yaml
 ---
--
-  hosts: all
+- hosts: all
   tasks:
     - name: Ansible Jinja2 for range, reversed (continue if odd)
       debug:
@@ -152,8 +147,7 @@ More: https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_filters.h
 
 ```yaml
 ---
--
-  hosts: all
+- hosts: all
   tasks:
     - name: Ansible Jinja2 filters
       debug:
@@ -190,8 +184,7 @@ More: https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_filters.h
 
 ```yaml
 ---
--
-  hosts: all
+- hosts: all
   tasks:
     - name: Jinja2 template
       template:

@@ -1,3 +1,5 @@
+> Ansible modules are reusable, standalone units of code used to perform tasks like managing files, installing packages, or configuring systems. They are the building blocks of playbooks and are executed on target hosts to carry out specific operations.
+
 To execute **setup** module:
 `ansible centos1 -m setup`
 `ansible centos1 -m setup | more`

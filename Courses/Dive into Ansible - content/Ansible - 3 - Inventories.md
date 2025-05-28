@@ -1,3 +1,5 @@
+> Inventories in Ansible define the hosts and groups of hosts that playbooks manage. They can be static (INI, YAML) or dynamic (via scripts or plugins), and include variables that control host-specific behavior.
+
 `ansible all -m ping` execute ping module on all hosts
 or `ansible "*" -m ping`
 

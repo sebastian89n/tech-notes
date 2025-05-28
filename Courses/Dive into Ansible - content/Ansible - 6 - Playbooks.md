@@ -1,3 +1,5 @@
+> Playbooks in Ansible are YAML files that define a series of tasks to automate configuration, deployment, or orchestration. They specify which hosts to target and what actions to perform using modules, variables, and control structures.
+
 - Ansible Playbooks utilise YAML, as human reaedable, data-serialisation language
 - Easy to use, easy to read, great for collaboration
 - Reading and writing of YAML, supported in most major programming languages
@@ -5,8 +7,7 @@
 
 ```yaml
 ---
--
-  hosts: centos
+- hosts: centos
   user: root
   tasks:
     - name: Configure a MOTD (Message of the day)
@@ -36,8 +37,7 @@ Copy `content` into files and disable `gather_facts`:x
 
 ```yaml
 ---
--
-  hosts: centos
+- hosts: centos
   user: root
   gather_facts: False
   tasks:
@@ -51,8 +51,7 @@ Copy `content` into files and disable `gather_facts`:x
 Usage of `jinja2` variables:
 ```yaml
 ---
--
-  hosts: centos
+- hosts: centos
   user: root
   gather_facts: False
   vars:
@@ -71,8 +70,7 @@ Variables can be passed via command line as well:
 **Handlers are only executed once, at the end of the tasks, when there's a change.**
 Using handlers:
 ```yaml
--
-  hosts: centos
+- hosts: centos
   user: root
   gather_facts: False
   vars:
@@ -98,8 +96,7 @@ Chec Facts available:
 Using info from Facts:
 ```yaml
 ---
--
-  hosts: linux
+- hosts: linux
   user: root
   gather_facts: True
   vars:
@@ -128,8 +125,7 @@ Using info from Facts:
 Copy files and preserve mode:
 ```yaml
 ---
--
-  hosts: ubuntu
+- hosts: ubuntu
   tasks:
     - name: Copy 60-ansible-motd to /etc/update-motd.d
       copy:

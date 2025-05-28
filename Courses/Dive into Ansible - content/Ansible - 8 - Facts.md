@@ -1,3 +1,5 @@
+>Ansible facts are system properties automatically gathered from managed hosts, such as IP addresses, OS type, or memory. They are stored as variables and can be used to make playbooks dynamic and context-aware.
+
 - The setup module and how this relates to fact gathering
 - Filtering for specific facts
 - The creation of custom facts
@@ -38,7 +40,6 @@ centos1 | SUCCESS => {
 Retrieving information in the playbook:
 ```yaml
 ---
-
   hosts: all
   tasks:
     - name: Show IP Address
@@ -95,8 +96,7 @@ custom facts are visible in `ansible_local`:
 They can be accessed in the playbook:
 ```yaml
 ---
--
-  hosts: all
+- hosts: all
 
   tasks:
     - name: Show IP Address
@@ -119,17 +119,7 @@ They can be accessed in the playbook:
 
 ```yaml
 ---
-# YAML documents begin with the document separator ---
-
-# The minus in YAML this indicates a list item.  The playbook contains a list
-# of plays, with each play being a dictionary
--
-
-  # Hosts: where our play will run and options it will run with
-  hosts: all
-
-  # Tasks: the list of tasks that will be executed within the play, this section
-  # can also be used for pre and post tasks
+- hosts: all
   tasks:
     - name: Show IP Address
       debug:
@@ -150,16 +140,13 @@ They can be accessed in the playbook:
     - name: Show Custom Fact 2 in hostvars
       debug:
         msg: "{{hostvars[ansible_hostname].ansible_local.getdate2.date.date }}"
-
-# Three dots indicate the end of a YAML document
 ...
 ```
 
 **Copy custom facts files to other hosts:**
 ```yaml
 ---
--
-  hosts: linux
+- hosts: linux
   tasks:
 
     - name: Make Facts Dir
@@ -213,8 +200,7 @@ Remove file created previously:
 
 Create facts.d in home directory of ansible user(to avoid using root):
 ```yaml
--
-  hosts: linux
+- hosts: linux
   tasks:
 
     - name: Make Facts Dir

@@ -3,8 +3,7 @@
 **1. Key-value pair**
 ```yaml
 ---
--
-  hosts: centos1
+- hosts: centos1
   gather_facts: False
  
   # Vars: variables that will apply to the play, on all target systems
@@ -22,17 +21,11 @@
 **2. Dictionary**
 ```yaml
 ---
--
-  # Hosts: where our play will run and options it will run with
-  hosts: centos1
+- hosts: centos1
   gather_facts: False
- 
-  # Vars: variables that will apply to the play, on all target systems
   vars:
     dict:
       dict_key: This is a dictionary value
- 
-  # Tasks: the list of tasks that will be executed within the playbook
   tasks:
     - name: Test named dictionary dictionary
       debug:
@@ -51,17 +44,12 @@
 **3. Inline dictionary**
 ```yaml
 ---
--
-  # Hosts: where our play will run and options it will run with
-  hosts: centos1
+- hosts: centos1
   gather_facts: False
- 
-  # Vars: variables that will apply to the play, on all target systems
   vars:
     inline_dict:
       {inline_dict_key: This is an inline dictionary value}
- 
-  # Tasks: the list of tasks that will be executed within the playbook
+      
   tasks:
     - name: Test named inline dictionary dictionary
       debug:
@@ -81,12 +69,8 @@
 **4. Normal list**
 ```yaml
 ---
--
-  # Hosts: where our play will run and options it will run with
-  hosts: centos1
+- hosts: centos1
   gather_facts: False
- 
-  # Vars: variables that will apply to the play, on all target systems
   vars:
     named_list:
       - item1
@@ -94,7 +78,6 @@
       - item3
       - item4
  
-  # Tasks: the list of tasks that will be executed within the playbook
   tasks:
     - name: Test named list
       debug:
@@ -113,17 +96,13 @@
 **5. Inline list**
 ```yaml
 ---
--
-  # Hosts: where our play will run and options it will run with
-  hosts: centos1
+- hosts: centos1
   gather_facts: False
  
-  # Vars: variables that will apply to the play, on all target systems
   vars:
     inline_named_list:
       [ item1, item2, item3, item4 ]
  
-  # Tasks: the list of tasks that will be executed within the playbook
   tasks:
     - name: Test inline named list
       debug:
@@ -143,15 +122,12 @@
 **6. External var files using `vars_files`**
 ```yaml
 ---
--
-  hosts: centos1
+- hosts: centos1
   gather_facts: False
  
-  # Vars: variables that will apply to the play, on all target systems
   vars_files:
     - external_vars.yaml
  
-  # Tasks: the list of tasks that will be executed within the playbook
   tasks:
     - name: Test external dictionary key value
       debug:
@@ -232,12 +208,8 @@ external_inline_named_list:
 
 **7 & 8. Var prompts - prompts users for the variable**
 ```yaml
--
-  # Hosts: where our play will run and options it will run with
-  hosts: centos1
+- hosts: centos1
   gather_facts: False
- 
-  # Vars: variables that will apply to the play, on all target systems
   vars_prompt:
     - name: username
       private: False
@@ -247,8 +219,6 @@ external_inline_named_list:
     - name: Test vars_prompt
       debug:
         msg: "{{ username }}"
- 
-# Three dots indicate the end of a YAML document
 ...
 ```
 
@@ -257,14 +227,8 @@ external_inline_named_list:
 **9 & 10. Using `hostvars` to access host specific data** (requires field to be present in `hostvars`. `Groupvars`(variables assigned on a group) can be also accessed via `hostvars`)
 ```yaml
 ---
--
-  # Hosts: where our play will run and options it will run with
-  hosts: centos1
+- hosts: centos1
   gather_facts: True
- 
-  # Vars: variables that will apply to the play, on all target systems
-
-  # Tasks: the list of tasks that will be executed within the playbook
   tasks:
     - name: Test hostvars with an ansible fact and collect ansible_port, dot notation
       debug:
@@ -273,22 +237,14 @@ external_inline_named_list:
     - name: Test hostvars with an ansible fact and collect ansible_port, dict notation
       debug:
         msg: "{{ hostvars[ansible_hostname]['ansible_port'] }}"
- 
-# Three dots indicate the end of a YAML document
 ...
 ```
 
 **11.  Default value using jinja2 filter**
 ```yaml
 ---
--
-  # Hosts: where our play will run and options it will run with
-  hosts: centos
+- hosts: centos
   gather_facts: True
- 
-  # Vars: variables that will apply to the play, on all target systems
-
-  # Tasks: the list of tasks that will be executed within the playbook
   tasks:
     - name: Test hostvars with an ansible fact and collect ansible_port, dot notation, default if not found
       debug:

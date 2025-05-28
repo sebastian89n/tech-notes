@@ -1,3 +1,5 @@
+>Playbook modules in Ansible are the specific tools used within playbooks to perform actions on target systems, such as managing packages, files, services, or users. Common modules include `yum` or `apt` (package management), `copy`, `template`, `file` (file operations), `service` (service control), and `user` (user management).
+
 Common playbook modules to remember:
 - set_fact
 - pause
@@ -11,8 +13,7 @@ Common playbook modules to remember:
 1. **Set Fact** - used for gathering facts when executing playbooks. Dynamically add or change facts during execution
 ```yaml
 ---
--
-  hosts: ubuntu3,centos3
+- hosts: ubuntu3,centos3
   tasks:
     - name: Set a fact
       set_fact:
@@ -26,8 +27,7 @@ Common playbook modules to remember:
 
 Override ansible-distribution using filter to make it all uppercase:
 ```yaml
--
-  hosts: ubuntu3,centos3
+- hosts: ubuntu3,centos3
   tasks:
     - name: Set a fact
       set_fact:
@@ -47,8 +47,7 @@ Override ansible-distribution using filter to make it all uppercase:
 Combining setting facts with `when`(instead of using inventory and group_vars):
 ```yaml
 ---
--
-  hosts: ubuntu3,centos3
+- hosts: ubuntu3,centos3
   tasks:
     - name: Set our installation variables for CentOS
       set_fact:
@@ -74,8 +73,7 @@ Combining setting facts with `when`(instead of using inventory and group_vars):
 
 ```yaml
 ---
--
-  hosts: ubuntu3,centos3
+- hosts: ubuntu3,centos3
   tasks:
     - name: Pause our playbook for 10 seconds
       pause:
@@ -86,8 +84,7 @@ Combining setting facts with `when`(instead of using inventory and group_vars):
 It can be used as a user prompt:
 ```yaml
 ---
--
-  hosts: ubuntu3,centos3
+- hosts: ubuntu3,centos3
   tasks:
     - name: Prompt user to verify before continue
       pause:
@@ -98,8 +95,7 @@ It can be used as a user prompt:
 Waiting for port 80 to be in use (example 06):
 ```yaml
 ---
--
-  hosts: ubuntu3,centos3
+- hosts: ubuntu3,centos3
   tasks:
     - name: Wait for the webserver to be running on port 80
       wait_for:
@@ -115,8 +111,7 @@ Waiting for port 80 to be in use (example 06):
 
 ```yaml
 ---
--
-  hosts: ubuntu-c
+- hosts: ubuntu-c
   tasks:
     - name: Assemble conf.d to sshd_config
       assemble:
@@ -150,16 +145,14 @@ To test after running:
 We start with ubuntu-c, but we create new groups where we add centos1. Then we target first group in a second play:
 ```yaml
 ---
--
-  hosts: ubuntu-c
+- hosts: ubuntu-c
   tasks:
     - name: Add centos1 to adhoc_group
       add_host:
         name: centos1
         groups: adhoc_group1, adhoc_group2
 
--
-  hosts: adhoc_group1
+- hosts: adhoc_group1
   tasks:
     - name: Ping all in adhoc_group1
       ping:
