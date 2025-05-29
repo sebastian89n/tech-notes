@@ -67,6 +67,8 @@ Usage of `jinja2` variables:
 Variables can be passed via command line as well:
 `ansible-playbook motd_playbook.yaml -e 'motd="Message inline\n"'`
 
+>**Ansible handlers** are special tasks that run only when notified by other tasks, typically used for actions that should happen only if something changes — like restarting a service after a config file update. They help make playbooks more efficient and idempotent by avoiding unnecessary operations. Handlers are defined like regular tasks but are triggered with `notify`.
+
 **Handlers are only executed once, at the end of the tasks, when there's a change.**
 Using handlers:
 ```yaml
