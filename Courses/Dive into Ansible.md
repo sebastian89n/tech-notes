@@ -17,5 +17,5 @@
 17.  [[Ansible - 17 - Magic Variables|Magic variables]]
 18. [[Ansible - 18 - Blocks|Blocks]]
 19. [[Ansible - 19 - Vault|Vault]]
-20. [[Ansible - 20 - Structuring Playbooks|Structuring Playbooks]]
-21. 
+20. [[Ansible - 20 - Includes and Imports|Includes and Imports]]
+21. [[Ansible - 21 - Using Tags|Using Tags]]
