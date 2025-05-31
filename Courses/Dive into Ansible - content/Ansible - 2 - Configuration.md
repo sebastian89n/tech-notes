@@ -2,7 +2,7 @@
 1. `ANSIBLE_CONFIG` (Environment Variable, with a filename target)
 2. `./ansible.cfg` (an ansible.cfg file, in the current directory) -> **recommended**
 3. `~/.ansible.cfg` (a hidden file, called .ansible.cfg, in the users home dir) 
-4. `/etc/ansible/ansible.cfg` (typically provided, through package or system 
+4. `/etc/ansible/ansible.cfg` (typically provided, through package or system)
 
 (4)
 
