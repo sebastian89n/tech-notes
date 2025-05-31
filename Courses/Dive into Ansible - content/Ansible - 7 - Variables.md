@@ -1,3 +1,5 @@
+>In Ansible, **facts** are pieces of information about the target system, automatically gathered with the `setup` module or defined manually using `set_fact`. **Vars** are user-defined variables that control playbook behavior and can come from inventory, playbooks, roles, or extra vars. Both **facts** and **vars** can be used in `when` conditionals, making them powerful tools for controlling task execution based on system state or user input. While **facts** reflect the current system environment, **vars** define how you want Ansible to behave.
+
 (numbers corresponds to example in section 4.14 variables module)
 
 **1. Key-value pair**
