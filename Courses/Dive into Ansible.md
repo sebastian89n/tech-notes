@@ -20,4 +20,5 @@
 20. [[Ansible - 20 - Includes and Imports|Includes and Imports]]
 21. [[Ansible - 21 - Tags|Tags]]
 22. [[Ansible - 22 - Roles|Roles]]
-23. 
+23. [[Ansible - 23 - AWS|AWS]]
+24. 
