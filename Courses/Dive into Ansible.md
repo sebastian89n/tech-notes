@@ -22,3 +22,5 @@
 22. [[Ansible - 22 - Roles|Roles]]
 23. [[Ansible - 23 - AWS|AWS]]
 24. [[Ansible - 24 - Docker|Docker]]
+25. [[Ansible - 25 - Creating Modules|Creating Modules]]
+26. [[Ansible - 26 - Creating Plugins|Creating Plugins]]
