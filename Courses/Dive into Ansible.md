@@ -24,3 +24,5 @@
 24. [[Ansible - 24 - Docker|Docker]]
 25. [[Ansible - 25 - Creating Modules|Creating Modules]]
 26. [[Ansible - 26 - Creating Plugins|Creating Plugins]]
+27. [[Ansible - 27 - Troubleshooting Ansible|Troubleshooting Ansible]]
+28. [[Ansible - 28 - Best practices|Best practices]]
