@@ -75,27 +75,27 @@ Images contains a calculated hash of the image content, it's layers and metadata
 `docker ps -a`
 
 ---
-## 🐳 Docker Images vs Containers: Stateless or Stateful?
+## Docker Images vs Containers: Stateless or Stateful?
 
-### 📦 Images Are Stateless
+### Images Are Stateless
 
 - A **Docker image** is a **read-only** template (like a blueprint).
 - Every time you run `docker run <image>`, it creates a **new, fresh container**.
 - The image itself does **not retain any state or changes** between runs.
 
-### 🧱 Containers Are Stateful (By Default)
+### Containers Are Stateful (By Default)
 
 - When you start a container, it gets its own **writable layer**.
 - Any changes (like installing software, creating files, modifying config) happen in this layer.
 - If you **stop** the container and then **start it again** (with `docker start <container-id>`), your changes are **still there**.
 - But if you **remove the container** (`docker rm`), those changes are lost.
 
-### 🔄 Running a New Container Always Starts Fresh
+### Running a New Container Always Starts Fresh
 
 - Running the same image again (with `docker run`) creates a **completely new container**, with **no access to previous changes**.
 - To **persist data independently of containers**, use **volumes** or `docker commit` to save the state as a new image.
 
-### ✅ Summary
+### Summary
 
 | Concept       | Description                                                     |
 | ------------- | --------------------------------------------------------------- |
@@ -103,7 +103,7 @@ Images contains a calculated hash of the image content, it's layers and metadata
 | **Container** | Stateful; has a writable layer that keeps changes until deleted |
 | **New run**   | Creates a fresh container unless you reuse the old one          |
 
-### 🧹 Tip: Clean Up When Needed
+### Tip: Clean Up When Needed
 
 - Use `docker rm <container>` to remove containers you no longer need.
 - Use `docker container prune` to remove **all stopped containers**.

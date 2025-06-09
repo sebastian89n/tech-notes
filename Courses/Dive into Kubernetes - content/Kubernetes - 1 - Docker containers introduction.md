@@ -1,6 +1,6 @@
-## 🐳 Introduction to Docker Containers
+### 🐳 Introduction to Docker Containers
 
-### What Are Docker Containers?
+##### What Are Docker Containers?
 
 **Docker containers** are a way to package and run applications in isolated environments. A container includes everything needed to run the application: code, runtime, libraries, dependencies, and configuration files.
 
@@ -8,7 +8,7 @@ Containers make applications **portable**, **consistent across environments**, a
 
 ---
 
-### 🧱 Docker Containers vs. Virtual Machines (VMs)
+### Docker Containers vs. Virtual Machines (VMs)
 
 | Feature            | Docker Containers                            | Virtual Machines                          |
 |--------------------|-----------------------------------------------|--------------------------------------------|
@@ -25,7 +25,7 @@ Containers make applications **portable**, **consistent across environments**, a
 
 ---
 
-### ⚙️ How Do Containers Work Under the Hood?
+### How Do Containers Work Under the Hood?
 
 Containers rely on Linux kernel features that allow them to behave like lightweight, isolated virtual systems without the need for a full OS.
 
@@ -53,7 +53,7 @@ This makes each container appear like it is running on its own OS.
 
 ---
 
-### 🧩 Summary
+### Summary
 
 Docker containers are:
 - **Lightweight** – no need for a full OS.
