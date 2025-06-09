@@ -1,6 +1,6 @@
 >**Networking** in Docker allows containers to communicate with each other and with the outside world through virtual networks, such as bridge, host, and overlay networks. **Services**, commonly used with Docker Swarm, enable the deployment and scaling of multi-container applications across a cluster. **Volumes** are used for persistent storage, allowing containers to store and share data independently of their lifecycle, ensuring data isn’t lost when a container stops or is removed.
 
-**Exposing ports:**
+#### Exposing ports:
 `docker run -d --rm nginx`
 `--rm` -> remove container upon exiting
 `-d` -> detach
@@ -24,7 +24,7 @@ root@7e1d44498aee:/# find / -name "index.html" 2>/dev/null
 /usr/share/nginx/html/index.html
 ```
 
-**Volumes:**
+#### Volumes:
 In Docker, the `-v` flag in `docker run` is used to **mount a volume**—a way to persist data outside the container's filesystem. Volumes let containers read/write files from the host or shared storage.
 
 It can be used to:

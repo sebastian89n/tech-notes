@@ -1,4 +1,4 @@
-### 🐳 Introduction to Docker Containers
+### Introduction to Docker Containers
 
 ##### What Are Docker Containers?
 
