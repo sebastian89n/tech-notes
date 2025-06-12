@@ -10,13 +10,13 @@ Containers make applications **portable**, **consistent across environments**, a
 
 ### Docker Containers vs. Virtual Machines (VMs)
 
-| Feature            | Docker Containers                            | Virtual Machines                          |
-|--------------------|-----------------------------------------------|--------------------------------------------|
-| **Isolation**      | Process-level (via Linux kernel features)     | Full hardware-level (via hypervisor)       |
-| **Startup Time**   | Fast (milliseconds)                           | Slow (minutes)                             |
-| **Size**           | Lightweight (MBs)                             | Heavyweight (GBs)                          |
-| **Performance**    | Near-native                                   | Some overhead from the guest OS            |
-| **Guest OS**       | Shares host OS kernel                         | Includes full guest OS                     |
+| Feature          | Docker Containers                         | Virtual Machines                     |
+| ---------------- | ----------------------------------------- | ------------------------------------ |
+| **Isolation**    | Process-level (via Linux kernel features) | Full hardware-level (via hypervisor) |
+| **Startup Time** | Fast (milliseconds)                       | Slow (minutes)                       |
+| **Size**         | Lightweight (MBs)                         | Heavyweight (GBs)                    |
+| **Performance**  | Near-native                               | Some overhead from the guest OS      |
+| **Guest OS**     | Shares host OS kernel                     | Includes full guest OS               |
 
 #### Example
 
@@ -72,3 +72,19 @@ You can configure Resources in Settings->Resources in Docker desktop.
 You can also enable Kubernetes in the Settings.
 
 `kubectl get nodes`
+
+---
+
+### Docker originally relies on Linux kernel features:
+
+Docker containers are fundamentally built on **Linux kernel features**:
+- **Namespaces**: for isolation (processes, networking, mount points, etc.)
+- **Cgroups**: for resource limits
+- **UnionFS** (like OverlayFS): for layered filesystems
+- **Capabilities and seccomp**: for restricting container privileges
+
+Docker can run **native Windows containers** using Windows kernel features (like Job Objects and Windows namespaces). But this is **only** for containers built on **Windows base images** (not Linux ones).
+
+Docker Desktop on Windows used **Hyper-V** to run a tiny Linux VM (based on Alpine or Debian) and ran all containers inside that VM. Now it uses **WSL 2 (Windows Subsystem for Linux 2)**, which provides a **real Linux kernel** inside a lightweight VM.
+
+`docker info`

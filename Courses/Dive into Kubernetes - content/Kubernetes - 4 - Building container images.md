@@ -63,7 +63,8 @@ CMD ["./cmatrix"]
 ```
 
 !! Notes:
-Use `WORKDIR /path` to change directory _persistently_
+Use `WORKDIR /path` to change directory persistently. It sets the working directory for subsequent instructions and creaetes a directory.
+
 `RUN cd dir` works only _for that line_, next command resets path.
 
 `docker build . -t sebastian89n/cmatrix` -> builds `sebastian89n/cmatrix:latest` docker image
@@ -79,7 +80,7 @@ sebastian89n/cmatrix                      latest                                
 ---
 #### **Improvements:**
 
-- Minimalise amount of layers
+- Minimalise amount of layers. Use logical operator &&/AND to rum multiple commands in sequence, only if the previous command is successful
 - Minimalise size of the docker image using multi-stage docker build
 - Run as a normal user instead of root
 - Use `ENTRYPOINT` to allow to pass parameter to cmatrix command
@@ -133,3 +134,13 @@ From 454MB to 19.4MB
 `docker run --rm -it sebastian89n/cmatrix:latest`
 `docker run --rm -it sebastian89n/cmatrix:latest --help`
 `docker run --rm -it sebastian89n/cmatrix:latest -ab -u 2 -C magenta`
+
+---
+**Pushing to docker hub**
+
+`docker login`
+`docker buildx create --name buildx-multi-arch`
+`docker buildx use buildx-multi-arch`
+`docker buildx build --no-cache --platform linux/amd64,linux/arm64/v8 . -t sebastian89n/cmatrix --push`
+
+`docker system prune` -> clear old images
