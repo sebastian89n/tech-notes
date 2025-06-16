@@ -4,3 +4,4 @@
 4. [[Kubernetes - 4 - Building container images|Building container images]]
 5. [[Kubernetes - 5 - Container Runtimes|Container Runtimes]]
 6. [[Kubernetes - 7 - Installing Kubernetes|Installing Kubernetes]]
+7. [[Kubernetes - 8 - Pods|Pods]]
