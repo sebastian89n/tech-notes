@@ -1,3 +1,5 @@
+![[Pasted image 20250617083554.png]]
+
 Check the running pods again but this time, hide the pause containers -
 
 `$ nerdctl -n k8s.io ps -a | grep -v pause`
@@ -38,4 +40,25 @@ Before we go, we'll clean this up from the kubernetes side by deleting the pod -
 
 `$ kubectl delete pod/nginx --grace-period=0`
 
-YAML is an important component that you'll use in your everyday Kubernetes usage, in the next video we'll explore how to quickly capture the YAML declaration from existing commands.
+---
+**Challenge**: Customising the restart policy via CLI
+
+Create pods with different restart policies via the CLI. Use the following examples to create pods with "Always," "OnFailure," and "Never" restart policies.
+
+Task 1: Create a pod with the "Always" restart policy (default behaviour):
+
+**Solution:**
+
+`kubectl run nginx-always --image=nginx --restart=Always`
+
+Task 2: Create a pod with the "OnFailure" restart policy:
+
+**Solution:**
+
+`kubectl run nginx-onfailure --image=nginx --restart=OnFailure`
+
+Task 3: Create a pod with the "Never" restart policy:
+
+**Solution:**
+
+`kubectl run nginx-never --image=nginx --restart=Never`

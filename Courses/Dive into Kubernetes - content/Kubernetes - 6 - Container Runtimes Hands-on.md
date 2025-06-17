@@ -133,6 +133,4 @@ As Kubernetes makes use of the same directory to search for a CNI configuration 
 
 `$ mv /etc/cni/net.d/nerdctl-bridge.conflist /resources`
 
-In the next video we'll setup and install Kubernetes using kubeadm.
-
 ![[Pasted image 20250614105956.png]]

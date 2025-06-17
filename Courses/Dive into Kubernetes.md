@@ -3,5 +3,11 @@
 3. [[Kubernetes - 3 - Container networking services and volumes|Container networking services and volumes]]
 4. [[Kubernetes - 4 - Building container images|Building container images]]
 5. [[Kubernetes - 5 - Container Runtimes|Container Runtimes]]
-6. [[Kubernetes - 7 - Installing Kubernetes|Installing Kubernetes]]
-7. [[Kubernetes - 8 - Pods|Pods]]
+6. [[Kubernetes - 6 - Container Runtimes Hands-on|Container Runtimes Hands-on]]
+7. [[Kubernetes - 7 - Installing Kubernetes|Installing Kubernetes]]
+8. [[Kubernetes - 8 - Pods|Pods]]
+9. [[Kubernetes - 9 - Pause Container|Pause Container]]
+10. [[Kubernetes - 10 - Pod Networking|Pod Networking]]
+11. [[Kubernetes - 11 - YAML|YAML]]
+12. [[Kubernetes - 12 - Deployments|Deployments]]
+13. 
