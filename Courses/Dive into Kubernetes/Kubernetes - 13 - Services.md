@@ -6,6 +6,8 @@
 
 >An **ExternalName** is a type of Kubernetes Service that maps a service name to an external DNS name. Instead of routing traffic to internal pods, it returns a CNAME record pointing to the external address. This is useful for integrating external services into the Kubernetes DNS system without using kube-proxy or creating actual endpoints.
 
+>A **Headless Service** in Kubernetes is a service without a cluster IP (`clusterIP: None`), used to directly expose the individual pod IPs behind the service. It enables clients to discover and connect to each pod individually, often used for stateful applications like databases. Headless Services are commonly used with StatefulSets for DNS-based pod discovery.
+
 Let's create a clusterIP for our deployment, as we specified a port when creating the deployment, we can use the expose command with kubectl to expose this as a service -
 
 `$ kubectl expose deployment/nginx --type=ClusterIP`
@@ -45,3 +47,5 @@ Even though the pods IP addresses have changed, the curl to the service IP still
 ![[Pasted image 20250618083356.png]]
 
 ![[Pasted image 20250618083524.png]]
+
+![[Pasted image 20250618083831.png]]
