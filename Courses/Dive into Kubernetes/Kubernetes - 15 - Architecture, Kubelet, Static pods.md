@@ -1,4 +1,4 @@
->The **kubelet** is a Kubernetes agent that runs on each node in the cluster and ensures that containers are running as expected. It receives instructions from the control plane (like the API server) and manages the lifecycle of pods assigned to the node. The kubelet monitors the state of these pods and reports back to the Kubernetes control plane. It is also responsible for monitoring the `/etc/kubernetes/manifests` directory and stopping containers when the files are removed
+>The **kubelet** is a Kubernetes agent that runs on each node in the cluster and ensures that containers are running as expected. It receives instructions from the control plane (like the API server) and manages the lifecycle of pods assigned to the node. The kubelet monitors the state of these pods and reports back to the Kubernetes control plane. It is also responsible for monitoring the `/etc/kubernetes/manifests` directory and stopping containers when the files are removed. It's a primary 'node agent' that runs each node. It is often referred to as the 'worker'.
 
 >A **DaemonSet** is a Kubernetes resource that ensures a specific pod runs on **all (or selected) nodes** in the cluster. It is commonly used for deploying system-level services like log collectors, monitoring agents, or network plugins. When a new node joins the cluster, the DaemonSet automatically schedules the pod on that node as well.
 
@@ -7,6 +7,8 @@
 >A **static pod** is directly managed by the **kubelet** on a specific node, not through the Kubernetes API server. It is defined by placing a pod manifest file in a specific directory on the node (e.g., `/etc/kubernetes/manifests`). Static pods are mostly used for running core Kubernetes components like the API server, scheduler, or controller-manager, especially in single-node or control plane setups.
 
 >A **normal pod** is managed by the Kubernetes control plane via the API server, while a **static pod** is managed directly by the kubelet and defined by a manifest file on the node (e.g., in `/etc/kubernetes/manifests`).
+
+![[Pasted image 20250623085313.png]]
 
 Let's re-review the components that are visible from a nerdctl/containerd viewpoint -
 
