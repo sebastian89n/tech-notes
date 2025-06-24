@@ -1,3 +1,7 @@
+>**etcd** is a distributed key-value store used by Kubernetes to store all cluster data, including the configuration, state, and metadata. It acts as the **source of truth** for the cluster, ensuring consistency and coordination across components. Because of its critical role, etcd must be highly available and backed up regularly.
+
+![[Pasted image 20250624082737.png]]
+
 Using our static pods manifests directory, let's move the etcd yaml file back to /etc/kubernetes/manifests, as we do let's watch this start using nerdctl, press CTRL-C to exit -
 
 `$ mv /etc/kubernetes/resources/etcd.yaml /etc/kubernetes/manifests; watch nerdctl -n k8s.io ps -a`
