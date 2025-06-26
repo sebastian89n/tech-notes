@@ -1,3 +1,7 @@
+>**kube-proxy** is a network component that runs on each node in a Kubernetes cluster. It manages network rules to direct traffic to the appropriate Pods, enabling communication between services and Pods. It supports different proxy modes (iptables, ipvs) to efficiently route traffic based on the service definition.
+>
+>Provides simple TCP, UDP and SCTP Stream Forwarding, round-robin TCP, UDP and SCTP Forwarding across a set of backends
+
 Let's expose our deployment like we did previously -
 
 `$ kubectl expose deployment/nginx --type=ClusterIP`
