@@ -1,0 +1,53 @@
+### Setup
+
+```
+docker run --name jenkins -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts
+```
+
+### Architecture
+
+**Jenkins Server (Controller)**
+- manages execution of the pipelines and the associated jobs
+- stores the result
+
+**Jenkins Agent**
+- Executes the job
+- Server delegates action to agents
+
+**Freestyle job:**
+Freestyle jobs in Jenkins are configured through the web UI and are ideal for simple, linear build tasks. They offer limited flexibility and are harder to maintain for complex workflows. Each step is added manually, and reusability across projects is minimal.
+
+**Pipeline Job:**
+Pipeline jobs are defined in code using a `Jenkinsfile`, allowing for complex, multi-stage workflows and version-controlled automation. They support features like parallel execution, conditional logic, and shared libraries. Pipelines are better suited for modern DevOps and continuous delivery practices.
+### First pipeline
+
+```groovy
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building a new laptop ...'
+                sh 'mkdir -p build'
+                sh 'touch build/computer.txt'
+                sh 'echo "Mainboard" >> build/computer.txt'
+                sh 'cat build/computer.txt'
+                sh 'echo "Display" >> build/computer.txt'
+                sh 'cat build/computer.txt'
+                sh 'echo "Keyboard" >> build/computer.txt'
+                sh 'cat build/computer.txt'
+            }
+        }
+    }
+
+    post {
+        always {
+            cleanWs()
+        }
+    }
+}
+```
+
+In Jenkins, a **workspace** is a directory on the build agent where job files are checked out and built. Each job gets its own workspace to avoid conflicts. It’s good practice to **clean the workspace** before or after builds—especially for long-lived jobs—to prevent issues from leftover files or outdated artifacts.
+
