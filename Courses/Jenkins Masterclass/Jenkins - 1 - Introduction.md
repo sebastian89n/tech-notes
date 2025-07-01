@@ -51,3 +51,67 @@ pipeline {
 
 In Jenkins, a **workspace** is a directory on the build agent where job files are checked out and built. Each job gets its own workspace to avoid conflicts. It’s good practice to **clean the workspace** before or after builds—especially for long-lived jobs—to prevent issues from leftover files or outdated artifacts.
 
+### Artifacts
+**Artifacts** are files generated during a build process, such as compiled binaries, test results, or logs, that are archived for later use. They allow you to store and access outputs from builds, making it easier to analyze results, distribute software, or promote builds between environments. You can configure Jenkins to automatically archive specific files as artifacts at the end of a job
+
+```groovy
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                cleanWs()
+                echo 'Building a new laptop ...'
+                sh 'mkdir -p build'
+                sh 'touch build/computer.txt'
+                sh 'echo "Mainboard" >> build/computer.txt'
+                sh 'cat build/computer.txt'
+                sh 'echo "Display" >> build/computer.txt'
+                sh 'cat build/computer.txt'
+                sh 'echo "Keyboard" >> build/computer.txt'
+                sh 'cat build/computer.txt'
+            }
+        }
+    }
+
+    post {
+        success{
+            archiveArtifacts artifacts: 'build/**'
+        }
+    }
+}
+```
+
+### Combining multiple shell scripts into one
+
+```groovy
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                cleanWs()
+                echo 'Building a new laptop ...'
+                sh '''
+                    mkdir -p build
+                    touch build/computer.txt
+                    echo "Mainboard" >> build/computer.txt
+                    cat build/computer.txt
+                    echo "Display" >> build/computer.txt
+                    cat build/computer.txt
+                    echo "Keyboard" >> build/computer.txt
+                    cat build/computer.txt
+                '''
+            }
+        }
+    }
+
+    post {
+        success {
+            archiveArtifacts artifacts: 'build/**'
+        }
+    }
+}
+```
