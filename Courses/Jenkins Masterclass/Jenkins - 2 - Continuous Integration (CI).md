@@ -1,0 +1,2 @@
+>In DevOps, **Continuous Integration (CI)** is a key practice that automates the building and testing of code every time a change is committed to the repository. Tools like **Jenkins** enable CI by automatically pulling code, compiling it, running tests, and providing feedback to developers. This helps detect issues early, shortens development cycles, and supports faster, more reliable software delivery in a DevOps pipeline.
+
