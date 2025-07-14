@@ -19,6 +19,10 @@ Freestyle jobs in Jenkins are configured through the web UI and are ideal for si
 
 **Pipeline Job:**
 Pipeline jobs are defined in code using a `Jenkinsfile`, allowing for complex, multi-stage workflows and version-controlled automation. They support features like parallel execution, conditional logic, and shared libraries. Pipelines are better suited for modern DevOps and continuous delivery practices.
+
+**When using docker in pipeline: **
+
+![[Pasted image 20250714084851.png]]
 ### First pipeline
 
 ```groovy
