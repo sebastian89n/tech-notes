@@ -77,3 +77,5 @@ pipeline {
 }
 ```
 
+We can run stages in parallel using `parallel` group.
+However consideration have to be made because for e.g. even though we can run unit tests and E2E tests in parallel, it may be better to run them one after the other because unit tests take 15 seconds, while E2E tests takes much longer. **We should strive to make stages fail as soon as possible.** We always should carefully consider structure of our pipeline to make sure it is efficient.
