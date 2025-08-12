@@ -31,6 +31,8 @@ You configure it in the **"Poll SCM"** option in the job configuration.
 
 The schedule uses the same **CRON-like syntax** as "Build periodically".
 
+Jobs has "Git Polling Log" that displays information about polling attempts.
+
 ![[Pasted image 20250812083814.png]]
 
 ![[Pasted image 20250812083637.png]]
