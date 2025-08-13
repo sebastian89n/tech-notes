@@ -35,4 +35,28 @@ Jobs has "Git Polling Log" that displays information about polling attempts.
 
 ![[Pasted image 20250812083814.png]]
 
+# Webhooks instead of polling
+
+## GitHub
+
+- In Jenkins job: check **“GitHub hook trigger for GITScm polling.”**
+- On GitHub repo: **Settings → Webhooks → Add webhook**
+    - Payload URL: `https://<your-jenkins>/github-webhook/`
+    - Content type: `application/json`
+    - Events: “Just the push event” (or what you need)
+- Remove your Poll SCM schedule (or leave empty) to avoid double builds
+## GitLab
+
+- Install/enable the **GitLab Plugin** (or use Generic Webhook Trigger).
+- In Jenkins job: check **“Build when a change is pushed to GitLab (webhook)”** or configure the Generic Webhook trigger.
+- On GitLab repo: **Settings → Webhooks**
+    - URL: `https://<your-jenkins>/project/<job-name>` (GitLab Plugin) or `https://<your-jenkins>/gitlab-webhook/`
+    - Events: Push (and Merge Request if desired)
+## Bitbucket
+- Enable **“Build when a change is pushed to Bitbucket”** in job (Bitbucket plugin).
+- In Bitbucket: **Repository settings → Webhooks**
+    - URL: `https://<your-jenkins>/bitbucket-hook/`
+    - Event: Push
+- Remove your Poll SCM schedule (or leave empty) to avoid double builds.
+
 ![[Pasted image 20250812083637.png]]
