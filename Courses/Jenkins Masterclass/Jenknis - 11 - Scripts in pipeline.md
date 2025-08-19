@@ -43,6 +43,28 @@ pipeline {
 }
 ```
 
+```groovy
+pipeline {
+    agent any
+
+    stages {
+        stage('Deploy') {
+            steps {
+                echo 'Deploying...'
+                script {
+                    env.MY_VAR = sh(script: 'date', returnStdout: true)
+                }
+            }
+        }
+        stage('E2E') {
+            steps {
+                echo 'E2E...'
+                echo "MY_VAR is: ${env.MY_VAR}"
+            }
+        }
+    }
+}
+```
 ### Best Practices
 - Use `script` blocks **only when necessary**—prefer declarative steps when possible.
 - Keep `script` blocks small and focused to maintain readability.
