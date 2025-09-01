@@ -429,6 +429,12 @@ pipeline {
             }
         }
 
+        stage('Build Docker images') {
+            steps {
+                sh 'docker build -t myjenkinsapp .'
+            }
+        }
+
         stage('Run Tests') {
             parallel {
                 stage('Unit Tests') {
