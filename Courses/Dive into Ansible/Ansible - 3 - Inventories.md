@@ -13,6 +13,8 @@ Output in one-liners:
 `ansible all -m ping -o`
 `ansible centos1 -m ping -o`
 
+`-o` is `one-line` makes theoutput more concise by printing each result on a single line, instead of in the usual multi-line, formatted output
+
 To disable ssh key check:
 `ANSIBLE_HOST_KEY_CHECKING=False` 
 
