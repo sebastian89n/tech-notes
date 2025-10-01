@@ -91,7 +91,7 @@ Using handlers:
 
 ```
 
-Chec Facts available:
+Check Facts available:
 `ansible all -i centos2, -m setup | more`
 `ansible all -i centos2,ubuntu2, -m setup | grep ansible_distribution`
 
