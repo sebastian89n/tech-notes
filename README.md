@@ -1,11 +1,11 @@
-# 📒 tech-notes
+# tech-notes
 
 A personal collection of technical notes, learning resources, and reference material.  
 This vault is primarily used to document knowledge gained from hands-on experience, Udemy courses, tutorials, and daily work in software development.
 
 ---
 
-## 🧠 Purpose
+## Purpose
 
 This repository serves as my digital notebook for:
 
@@ -17,7 +17,7 @@ This repository serves as my digital notebook for:
 
 ---
 
-## 🔧 Tools
+## Tools
 
 This vault is managed using [Obsidian](https://obsidian.md/), a markdown-based note-taking tool.  
 Optionally version-controlled using Git to:
@@ -28,7 +28,7 @@ Optionally version-controlled using Git to:
 
 ---
 
-## 🚀 How to Use
+## How to Use
 
 If you're viewing this repo:
 
