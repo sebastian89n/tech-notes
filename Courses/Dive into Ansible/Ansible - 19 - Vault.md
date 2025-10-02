@@ -36,7 +36,7 @@ In order to use Vault:
 
 **Encrypting file:**
 
-`ansible-vault encrypt external_vault_vars.yaml` - this will result in file content being encrypted by ansibel
+`ansible-vault encrypt external_vault_vars.yaml` - this will result in file content being encrypted by ansible
 
 ```yaml
 ---
